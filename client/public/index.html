@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Открытки</title>
+  </head>
+
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <h1 class="nav__logo">
+          <a class="nav__logo-link" href="/">Открытки</a>
+        </h1>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="wrap">
+        <form class="form">
+          <div class="form__fullname">
+            <input type="text" name="name" placeholder="Имя" id="name" autofocus />
+            <span class="form__error-name">Введите корректное имя</span>
+            <input type="text" name="surname" placeholder="Фамилия" id="surname" />
+            <span class="form__error-surname">Введите корректную фамилию</span>
+          </div>
+
+          <div class="form__gender">
+            <label>
+              <input type="radio" name="gender" id="male" />
+              Мужчина
+            </label>
+
+            <label>
+              <input type="radio" name="gender" id="female" />
+              Женщина
+            </label>
+
+            <label style="display: none">
+              <input type="radio" name="gender" id="all" checked />
+            </label>
+          </div>
+
+          <select class="form__select" name="select" id="select">
+            <option value="" disabled selected>Выберите праздник</option>
+          </select>
+
+          <div class="wrap">
+            <button type="submit" class="form__submit">Получить открытку</button>
+            <button type="submit" class="form__download">
+              <a download class="form__download">Скачать</a>
+            </button>
+          </div>
+        </form>
+
+        <div class="wrapper">
+          <div class="postcard">
+            <div class="postcard__content">
+              <p>Здесь будет открытка ...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

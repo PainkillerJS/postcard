@@ -1,0 +1,53 @@
+.form {
+  width: 250px;
+
+  &__fullname {
+    & input {
+      width: 100%;
+      font-size: 14px;
+      padding: 10px 12px 8px 12px;
+      border-radius: 4px;
+      border: 2px solid #eee;
+
+      &:last-child {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__error-surname,
+  &__error-name {
+    opacity: 0;
+    color: crimson;
+    font-size: 10px;
+    display: inline-block;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  &__gender {
+    display: flex;
+
+    & label:nth-child(2) {
+      margin-left: 60px;
+    }
+
+    & label:last-child {
+      margin-left: 10px;
+    }
+  }
+
+  &__select {
+    width: 100%;
+    margin-top: 20px;
+    padding: 8px 0;
+    border-radius: 4px;
+    border: 2px solid #eee;
+
+    & option {
+      text-align: center;
+    }
+  }
+}
