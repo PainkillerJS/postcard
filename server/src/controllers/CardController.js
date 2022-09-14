@@ -20,15 +20,18 @@ class CardController {
   async create(req, res) {
     const { holyday, name, surname } = req.body;
 
-    await sharpService.createIMG(namesPictures[holyday], name, surname);
+    const { id } = await sharpService.createIMG(namesPictures[holyday], name, surname);
 
     res.status(200).json({
-      url: 'http://localhost:5000/static/postcard.jpg',
+      url: `http://localhost:5000/static/${id}.jpg`,
+      id,
     });
   }
 
   downloadCard(req, res) {
-    res.download(getPath('userFiles', 'postcard.jpg'));
+    const { id } = req.query;
+
+    res.download(getPath('userFiles', `${id}.jpg`));
   }
 }
 

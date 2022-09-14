@@ -26,6 +26,7 @@ class SharpService {
          `;
 
     const svgBuffer = Buffer.from(svgImage);
+    const id = Date.now();
 
     await sharp(getPath('assets', url))
       .composite([
@@ -35,7 +36,9 @@ class SharpService {
           left: 20,
         },
       ])
-      .toFile(getPath('userFiles', 'postcard.jpg'));
+      .toFile(getPath('userFiles', `${id}.jpg`));
+
+    return { id };
   }
 }
 

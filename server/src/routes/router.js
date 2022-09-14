@@ -1,4 +1,3 @@
-import sharp from 'sharp';
 import { Router } from 'express';
 
 import cardController from '../controllers/CardController.js';

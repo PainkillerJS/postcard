@@ -24,16 +24,17 @@ export default class Image {
   }
 
   async downloadImage() {
-    const blob = await downloadImageRequest().then((data) => data.blob());
+    const blob = await downloadImageRequest(this.id).then((data) => data.blob());
     const urlDownload = URL.createObjectURL(blob);
 
     return urlDownload;
   }
 
   async createImage(data) {
-    this.url = await createImageRequest(data)
-      .then((data) => data.json())
-      .then((data) => data?.url);
+    const { url, id } = await createImageRequest(data).then((data) => data.json());
+
+    this.url = url;
+    this.id = id;
 
     this.#showImg(this.url);
   }
